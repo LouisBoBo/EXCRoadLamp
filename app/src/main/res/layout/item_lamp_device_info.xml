@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tv_baseview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="绑定灯杆:"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:padding="15dp"
+        app:layout_constraintTop_toTopOf="@id/tv_baseview"
+        app:layout_constraintStart_toStartOf="@id/tv_baseview"/>
+
+    <ImageView
+        android:id="@+id/img_mark"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_2"
+        android:src="@mipmap/icon_must"
+        app:layout_constraintTop_toTopOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="@id/tv_title"/>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_36"
+        android:background="@drawable/bg_slide_light"
+        android:layout_marginRight="@dimen/dp_10"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:textColorHint="@color/text_color_999999"
+        android:layout_marginBottom="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintEnd_toStartOf="@id/tv_select"/>
+
+    <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="@dimen/dp_76"
+        android:layout_height="@dimen/dp_35"
+        android:text="选择灯杆"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@drawable/background_btn_blue"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="@id/tv_content"
+        app:layout_constraintBottom_toBottomOf="@id/tv_content"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/tv_select"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

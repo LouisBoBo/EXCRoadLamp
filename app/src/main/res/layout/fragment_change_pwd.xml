@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/status_color"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_tiptitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text=""
+            android:gravity="center"
+            />
+
+        <View
+            android:id="@+id/baseview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_150"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/tv_tiptitle"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dp_1"-->
+<!--            android:layout_marginTop="@dimen/dp_50"-->
+<!--            android:background="@color/pop_item_bg_pressed"-->
+<!--            app:layout_constraintTop_toTopOf="@id/baseview"-->
+<!--            app:layout_constraintStart_toStartOf="@id/baseview"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dp_1"-->
+<!--            android:layout_marginTop="@dimen/dp_100"-->
+<!--            android:background="@color/pop_item_bg_pressed"-->
+<!--            app:layout_constraintTop_toTopOf="@id/baseview"-->
+<!--            app:layout_constraintStart_toStartOf="@id/baseview"/>-->
+
+        <TextView
+            android:id="@+id/tv_oldpwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            app:layout_constraintTop_toTopOf="@id/baseview"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_oldpwd_title"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="@dimen/dp_50"
+            android:text="输入旧密码"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:drawableLeft="@mipmap/my_home_icon_password"
+            app:layout_constraintTop_toTopOf="@id/tv_oldpwd"
+            app:layout_constraintStart_toStartOf="@id/tv_oldpwd"/>
+
+        <EditText
+            android:id="@+id/et_oldpwd"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginRight="5dp"
+            android:textSize="14sp"
+            android:background="@null"
+            android:singleLine="true"
+            app:layout_constraintTop_toTopOf="@id/tv_oldpwd"
+            app:layout_constraintStart_toEndOf="@id/tv_oldpwd_title"
+            app:layout_constraintEnd_toStartOf="@id/img_old_scan"/>
+
+        <ImageView
+            android:id="@+id/img_old_scan"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:src="@mipmap/icon_nosee"
+            app:layout_constraintTop_toTopOf="@id/tv_oldpwd"
+            app:layout_constraintBottom_toBottomOf="@id/tv_oldpwd"
+            app:layout_constraintStart_toEndOf="@id/et_oldpwd"
+            app:layout_constraintEnd_toEndOf="@id/tv_oldpwd"/>
+
+        <TextView
+            android:id="@+id/tv_newpwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            app:layout_constraintTop_toBottomOf="@id/tv_oldpwd"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_newpwd_title"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="@dimen/dp_50"
+            android:text="输入新密码"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:drawableLeft="@mipmap/my_home_icon_password"
+            app:layout_constraintTop_toTopOf="@id/tv_newpwd"
+            app:layout_constraintStart_toStartOf="@id/tv_newpwd"/>
+
+        <EditText
+            android:id="@+id/et_newpwd"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginRight="@dimen/dp_5"
+            android:background="@null"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@id/tv_newpwd"
+            app:layout_constraintStart_toEndOf="@id/tv_newpwd_title"
+            app:layout_constraintEnd_toStartOf="@id/img_new_scan"/>
+
+        <ImageView
+            android:id="@+id/img_new_scan"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:src="@mipmap/icon_nosee"
+            app:layout_constraintTop_toTopOf="@id/tv_newpwd"
+            app:layout_constraintBottom_toBottomOf="@id/tv_newpwd"
+            app:layout_constraintStart_toEndOf="@id/et_newpwd"
+            app:layout_constraintEnd_toEndOf="@id/tv_newpwd"/>
+
+
+        <TextView
+            android:id="@+id/tv_cfmpwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            app:layout_constraintTop_toBottomOf="@id/tv_newpwd"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_cfmpwd_title"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="@dimen/dp_50"
+            android:text="确认新密码"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:drawableLeft="@mipmap/my_home_icon_password"
+            app:layout_constraintTop_toTopOf="@id/tv_cfmpwd"
+            app:layout_constraintStart_toStartOf="@id/tv_cfmpwd"/>
+
+        <EditText
+            android:id="@+id/et_cfmpwd"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@null"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@id/tv_cfmpwd"
+            app:layout_constraintStart_toEndOf="@id/tv_cfmpwd_title"
+            app:layout_constraintEnd_toEndOf="@id/tv_cfmpwd"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:textSize="@dimen/sp_12"
+            android:text="密码长度为10-24字符，可以是数字，字母等任意字符"
+            app:layout_constraintTop_toBottomOf="@id/baseview"
+            app:layout_constraintStart_toStartOf="@id/baseview"/>
+
+        <TextView
+            android:id="@+id/submitPwd"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:text="保存"
+            android:gravity="center"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"
+            android:background="@drawable/background_btn_confirm"
+            android:layout_marginTop="@dimen/dp_50"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@id/baseview"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

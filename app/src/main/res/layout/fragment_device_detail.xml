@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/detail_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/background_normal"
+            android:layout_margin="@dimen/dp_10"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/tv_device_name"
+                layout="@layout/item_device_info" />
+
+            <include
+                android:id="@+id/tv_device_num"
+                layout="@layout/item_device_info" />
+
+            <include
+                android:id="@+id/tv_device_count"
+                layout="@layout/item_device_info" />
+
+            <include
+                android:id="@+id/tv_site_name"
+                layout="@layout/item_device_area" />
+
+            <include
+                android:id="@+id/tv_device_product"
+                layout="@layout/item_device_info" />
+
+            <include
+                android:id="@+id/device_coordinate"
+                layout="@layout/item_device_coordinate" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_photo_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="现场照片"
+            android:layout_margin="@dimen/dp_15"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/detail_info"/>
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_150"
+            android:layout_margin="@dimen/dp_15"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_photo_title"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_scanmap"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_35"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@drawable/background_btn_blue"
+                android:clickable="true"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:text="查看地图"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:src="@mipmap/icon_location"
+                android:layout_marginLeft="@dimen/dp_90"
+                app:layout_constraintTop_toTopOf="@id/tv_scanmap"
+                app:layout_constraintBottom_toBottomOf="@id/tv_scanmap"
+                app:layout_constraintStart_toStartOf="@id/tv_scanmap"
+                app:layout_constraintEnd_toEndOf="@id/tv_scanmap"/>
+
+            <TextView
+                android:id="@+id/tv_deleate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_35"
+                android:layout_margin="@dimen/dp_20"
+                android:background="@drawable/background_btn_red"
+                android:clickable="true"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:text="删除"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_scanmap"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

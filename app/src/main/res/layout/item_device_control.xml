@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_165"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/baseview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_155"
+        android:background="@drawable/background_normal"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/device_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:text="设备名称"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:singleLine="true"
+        app:layout_constraintTop_toTopOf="@id/baseview"
+        app:layout_constraintStart_toStartOf="@id/baseview"
+        app:layout_constraintEnd_toEndOf="@id/baseview"/>
+
+    <TextView
+        android:id="@+id/device_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:text="设备编号"
+        android:singleLine="true"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/device_name"
+        app:layout_constraintStart_toStartOf="@id/baseview"
+        app:layout_constraintEnd_toEndOf="@id/baseview"/>
+
+    <TextView
+        android:id="@+id/device_switch"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:text="开灯控制"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/device_num"
+        app:layout_constraintStart_toStartOf="@id/baseview"
+        />
+
+    <com.exc.roadlamp.device.customview.MyPSwitchView
+        android:id="@+id/status_switch"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_25"
+        android:layout_alignParentRight="true"
+        app:switch_checked="false"
+        app:switch_close_color="#CDCBCF"
+        app:switch_dot_color="#ffffff"
+        app:switch_dot_margin="1.5dp"
+        app:switch_open_color="#017AFF"
+        app:switch_shape="circular"
+        app:switch_slidable="true"
+        app:layout_constraintTop_toTopOf="@id/device_switch"
+        app:layout_constraintBottom_toBottomOf="@id/device_switch"
+        app:layout_constraintStart_toEndOf="@id/device_switch"/>
+
+    <TextView
+        android:id="@+id/device_light"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:text="亮度调节"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/device_switch"
+        app:layout_constraintStart_toStartOf="@id/baseview"
+        />
+
+    <SeekBar
+        android:id="@+id/sk"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"
+        android:layout_height="wrap_content"
+        android:splitTrack="false"
+        android:layout_width="0dp"
+        android:progress="0"
+        android:duplicateParentState="true"
+        android:layout_marginRight="@dimen/dp_30"
+        android:progressDrawable="@drawable/lamp_dev_open_seek_bar_drawable"
+        android:thumbTint="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="@id/device_light"
+        app:layout_constraintBottom_toBottomOf="@id/device_light"
+        app:layout_constraintStart_toEndOf="@id/device_light"
+        app:layout_constraintEnd_toEndOf="@id/baseview"/>
+
+    <TextView
+        android:id="@+id/sk_title"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="亮度"
+        android:textSize="@dimen/sp_15"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="@id/sk"
+        app:layout_constraintStart_toStartOf="@id/sk"
+        app:layout_constraintBottom_toBottomOf="@id/sk"/>
+
+    <TextView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="0%"
+        android:textSize="@dimen/sp_15"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="@id/sk"
+        app:layout_constraintBottom_toBottomOf="@id/sk"
+        app:layout_constraintStart_toEndOf="@id/sk_title" />
+
+
+    <ImageView
+        android:id="@+id/img_mark"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginRight="@dimen/dp_10"
+        android:src="@mipmap/video_normal"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/baseview"
+        app:layout_constraintTop_toTopOf="@id/baseview"
+        app:layout_constraintBottom_toBottomOf="@id/baseview"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

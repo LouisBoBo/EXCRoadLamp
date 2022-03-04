@@ -1,0 +1,182 @@
+apply plugin: 'com.android.application'
+apply plugin: 'img-optimizer'
+android {
+    compileSdkVersion build_versions.target_sdk
+//    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "com.exc.roadlamp"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 4
+        versionName "1.1.4"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+//    viewBinding.enabled = true
+    buildFeatures{
+        viewBinding = true
+    }
+    signingConfigs {
+        release {
+            storeFile file('CloudControl1.jks')
+            storePassword '20201216'
+            keyPassword '20201216'
+            keyAlias 'cc1'
+        }
+
+        debug {
+            storeFile file('CloudControl1.jks')
+            storePassword '20201216'
+            keyPassword '20201216'
+            keyAlias 'cc1'
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                signingConfig signingConfigs.release
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    testImplementation deps.junit
+    androidTestImplementation deps.runner
+    androidTestImplementation deps.espresso.core
+//    implementation files('libs/commons-codec-1.15.jar')
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.alibaba:fastjson:1.2.54'
+
+    implementation project(path: ':baseokhttp_v3')
+    implementation project(path: ':xui_lib')
+
+
+    //分包
+    implementation deps.androidx.multidex
+
+    implementation 'com.alibaba.android:vlayout:1.2.36'
+    //下拉刷新
+    implementation 'com.github.xuexiangjys.SmartRefreshLayout:refresh-header:1.1.5'
+    implementation 'com.github.xuexiangjys.SmartRefreshLayout:refresh-layout:1.1.5'
+    //WebView
+    implementation 'com.github.xuexiangjys.AgentWeb:agentweb-core:1.0.0'
+    implementation 'com.github.xuexiangjys.AgentWeb:agentweb-download:1.0.0'//选填
+    //腾讯的键值对存储mmkv
+    implementation 'com.tencent:mmkv:1.0.22'
+    //屏幕适配AutoSize
+    implementation 'me.jessyan:autosize:1.1.2'
+    //umeng统计
+//    implementation 'com.umeng.umsdk:analytics:8.0.2'
+//    implementation 'com.umeng.umsdk:common:2.0.2'
+
+    //预加载占位控件
+    implementation 'me.samlss:broccoli:1.0.0'
+    //TabBar
+    implementation 'com.github.xuexiangjys:JPTabBar:1.0.1'
+
+    implementation 'com.zzhoujay.richtext:richtext:3.0.8'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //ANR异常捕获
+    implementation 'com.github.anrwatchdog:anrwatchdog:1.4.0'
+
+    //美团多渠道打包
+    implementation 'com.meituan.android.walle:library:1.1.6'
+
+    implementation 'com.github.donkingliang:ConsecutiveScroller:2.6.2'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    implementation 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    //PictureSelector图片选择
+    implementation 'com.github.xuexiangjys.PictureSelector:picture-core:1.0.5'
+
+    //3D地图so及jar
+    implementation 'com.amap.api:3dmap:latest.integration'
+    //定位功能
+    implementation 'com.amap.api:location:latest.integration'
+    implementation 'com.kyle.nestedradiogrouplib:radiogrouplib:1.0.1'
+
+    implementation 'com.android.support:design:25.3.1'
+
+
+//    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.0'
+
+
+//    implementation 'com.github.YancyYe:GalleryPick:1.2.1'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+
+    implementation 'com.github.tbruyelle:rxpermissions:0.12'
+
+
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0-RC4'
+//    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0-SNAPSHOT'
+
+    implementation 'com.google.android:flexbox:0.3.1'
+
+    implementation 'com.google.code.gson:gson:2.6.2'
+
+    implementation 'com.github.xuexiangjys:XUpdate:2.0.2'
+
+    implementation 'com.zhy:okhttputils:2.6.2'
+
+    implementation 'me.jessyan:progressmanager:1.5.0'
+
+    implementation 'com.yanzhenjie:permission:2.0.3'
+
+    implementation 'com.youth.banner:banner:1.4.9'
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+    implementation 'com.commit451:PhotoView:1.2.4'
+
+    //XQRCode二维码扫描
+    implementation 'com.github.xuexiangjys:XQRCode:1.1.0'
+
+    implementation 'com.mindorks.android:prdownloader:0.5.0'
+
+    implementation 'com.github.ljphawk:SwipeMenuLayout:1.05'
+}
+//自动添加X-Library依赖
+apply from: 'x-library.gradle'
+//walle多渠道打包
+apply from: 'multiple-channel.gradle'
+
+

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dev_map_dev_click_fragment_bg"
+    android:minHeight="@dimen/dp_500"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp_10"
+    android:paddingRight="@dimen/dp_10">
+
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/dev_map_dev_click_fragment_scoll_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/info_img"
+        android:layout_width="@dimen/dp_116"
+        android:layout_height="@dimen/dp_230"
+        android:src="@mipmap/icon_lamp_normal"
+        app:layout_constraintTop_toBottomOf="@id/top_view"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_lamp_pole_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="灯杆001"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginLeft="@dimen/dp_30"
+        app:layout_constraintStart_toEndOf="@id/info_img"
+        app:layout_constraintTop_toBottomOf="@id/top_view" />
+
+    <LinearLayout
+        android:id="@+id/detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_lamp_pole_name"
+        app:layout_constraintStart_toStartOf="@id/tv_lamp_pole_name"
+        app:layout_constraintBottom_toBottomOf="@id/info_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="@dimen/dp_10"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_lamp_pole_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="123"
+            android:background="@color/radius_button_color_blue"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_lamp_pole_name" />
+
+        <TextView
+            android:id="@+id/tv_lamp_pole_area"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="888"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:drawableLeft="@mipmap/icon_lamp_area"
+            android:drawablePadding="@dimen/dp_5"
+            android:textColor="@color/text_color_333333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/tv_lamp_pole_site"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_30"
+            android:text="9999999"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:drawableLeft="@mipmap/icon_lamp_stree"
+            android:drawablePadding="@dimen/dp_5"
+            android:textColor="@color/text_color_333333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_lamp_pole_street"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="666"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:drawableLeft="@mipmap/icon_lamp_site"
+            android:drawablePadding="@dimen/dp_5"
+            android:textColor="@color/text_color_333333"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_lamp_pole_num" />
+
+
+        <TextView
+            android:id="@+id/tv_lamp_pole_install_position"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="777"
+            android:textColor="@color/text_color_333333"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:drawableLeft="@mipmap/icon_lamp_road"
+            android:drawablePadding="@dimen/dp_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_lamp_pole_street" />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_dev_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/detail" />
+
+
+    <FrameLayout
+        android:paddingBottom="@dimen/dp_10"
+        android:id="@+id/fl_dev_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView_dev_list" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

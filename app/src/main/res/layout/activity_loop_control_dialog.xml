@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rb_bg_pressed"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/loop_baseview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_180"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/loop_name"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_30"
+        android:text="回路呢称："
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_20"
+        app:layout_constraintTop_toTopOf="@id/loop_baseview"
+        app:layout_constraintStart_toStartOf="@id/loop_baseview" />
+
+    <TextView
+        android:id="@+id/loop_name_text"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_20"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_5"
+        android:textColor="@color/black"
+        android:background="@drawable/home_block_bg"
+        app:layout_constraintTop_toTopOf="@id/loop_name"
+        app:layout_constraintStart_toEndOf="@id/loop_name"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/loop_style"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_30"
+        android:text="回路类型："
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/loop_name"
+        app:layout_constraintStart_toStartOf="@id/loop_name"
+        android:layout_marginTop="@dimen/dp_20"
+        />
+
+    <TextView
+        android:id="@+id/loop_style_text"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_20"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_5"
+        android:textColor="@color/black"
+        android:background="@drawable/home_block_bg"
+        app:layout_constraintTop_toTopOf="@id/loop_style"
+        app:layout_constraintStart_toEndOf="@id/loop_style"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:src="@drawable/background_btn_select"
+        android:layout_marginRight="@dimen/dp_5"
+        app:layout_constraintTop_toTopOf="@id/loop_style_text"
+        app:layout_constraintBottom_toBottomOf="@id/loop_style_text"
+        app:layout_constraintEnd_toEndOf="@id/loop_style_text"/>
+
+    <TextView
+        android:id="@+id/level_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        app:layout_constraintTop_toBottomOf="@id/loop_style"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/vertical_line"
+        android:layout_width="0.5dp"
+        android:layout_height="0dp"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintTop_toBottomOf="@id/level_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/loop_baseview"/>
+
+    <TextView
+        android:id="@+id/loop_cancle"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_30"
+        android:text="取消"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/loop_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical_line"
+        app:layout_constraintBottom_toBottomOf="@id/loop_baseview"/>
+
+    <TextView
+        android:id="@+id/loop_confirm"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_30"
+        android:text="确定"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/loop_style"
+        app:layout_constraintStart_toEndOf="@id/vertical_line"
+        app:layout_constraintEnd_toEndOf="@id/loop_baseview"
+        app:layout_constraintBottom_toBottomOf="@id/loop_baseview"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

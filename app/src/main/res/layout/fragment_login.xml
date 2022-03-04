@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="@dimen/dp_70"
+            android:text="@string/title_login"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/basetitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_180"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_200"
+            android:background="@drawable/login_shape"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_30"
+            android:paddingRight="@dimen/dp_20">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="@dimen/config_margin_18dp"
+                    android:layout_height="@dimen/dp_28"
+                    app:srcCompat="@drawable/icon_login_user" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="账号"
+                    android:textColor="@color/text_color_333333"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+
+
+            <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                android:id="@+id/et_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tip_please_input_phone_number"
+                android:textColor="@color/text_color_333333"
+                app:met_clearButton="true"
+                android:textSize="@dimen/sp_17"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="账号" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/config_margin_18dp"
+                    android:layout_height="@dimen/dp_28"
+                    app:srcCompat="@drawable/icon_login_pwd" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/title_password"
+                    android:textColor="@color/text_color_333333"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+
+            <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                android:id="@+id/et_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:met_passWordButton="true"
+                android:hint="请输入密码"
+                android:textColor="@color/text_color_333333"
+                app:met_clearButton="false"
+                android:textSize="@dimen/sp_17"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="密码"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_25"
+                android:background="@drawable/btn_color"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_12"
+                android:paddingBottom="@dimen/dp_12"
+                android:text="@string/title_login"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

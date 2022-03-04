@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/status_color"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_18" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/status_color">
+
+        <View
+            android:id="@+id/headview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:background="@drawable/status_color"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="NotSibling" />
+
+        <ImageView
+            android:id="@+id/user_phonto"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:src="@mipmap/my_home_icon_male"
+            app:layout_constraintTop_toTopOf="@id/headview"
+            app:layout_constraintStart_toStartOf="@id/headview"
+            app:layout_constraintBottom_toBottomOf="@id/headview"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/user_phonto"
+            app:layout_constraintStart_toEndOf="@id/user_phonto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_member"/>
+
+        <TextView
+            android:id="@+id/tv_member"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:textSize="@dimen/sp_16"
+            android:singleLine="true"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toEndOf="@id/user_phonto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/user_phonto"/>
+
+        <LinearLayout
+            android:id="@+id/itemview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/login_shape"
+            app:layout_constraintTop_toBottomOf="@id/headview"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include
+                android:id="@+id/userinfo_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_20"
+                layout="@layout/item_my_info" />
+
+            <include
+                android:id="@+id/pwd_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                layout="@layout/item_my_info" />
+
+            <include
+                android:id="@+id/setting_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                layout="@layout/item_my_info" />
+
+            <include
+                android:id="@+id/about_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                layout="@layout/item_my_info" />
+
+            <include
+                android:id="@+id/upgrade_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                layout="@layout/item_my_info" />
+
+            <include
+                android:id="@+id/loginout_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_20"
+                layout="@layout/item_my_info" />
+
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/loginout_btn"-->
+<!--            android:layout_width="@dimen/dp_200"-->
+<!--            android:layout_height="@dimen/dp_40"-->
+<!--            android:background="@drawable/background_btn_confirm"-->
+<!--            android:text="退出登录"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:layout_marginBottom="@dimen/dp_50"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/itemview"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

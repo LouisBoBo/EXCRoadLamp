@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_normal">
+
+    <TextView
+        android:id="@+id/light_num"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_40"
+        android:text="单灯编号"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:textSize="@dimen/sp_16"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/light_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/pop_item_bg_pressed"
+        app:layout_constraintTop_toBottomOf="@+id/light_num"/>
+
+    <TextView
+        android:id="@+id/light_model"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_40"
+        android:text="协议类型"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/sp_16"
+        android:singleLine="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/select_more"
+        app:layout_constraintTop_toBottomOf="@id/light_line"/>
+
+    <ImageView
+        android:id="@+id/select_more"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_10"
+        android:src="@mipmap/daosanjiao"
+        app:layout_constraintTop_toTopOf="@id/light_model"
+        app:layout_constraintBottom_toBottomOf="@id/light_model"
+        app:layout_constraintStart_toEndOf="@id/light_model"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

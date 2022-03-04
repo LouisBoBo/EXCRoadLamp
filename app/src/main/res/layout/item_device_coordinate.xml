@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+
+
+    <TextView
+        android:id="@+id/tv_baseview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/longitude_title"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="经度"
+        android:textSize="15sp"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/tv_baseview"
+        app:layout_constraintStart_toStartOf="@id/tv_baseview"
+        app:layout_constraintEnd_toStartOf="@id/longitude_content"/>
+
+    <TextView
+        android:id="@+id/longitude_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/longitude_title"
+        app:layout_constraintBottom_toBottomOf="@id/longitude_title"
+        app:layout_constraintStart_toEndOf="@id/longitude_title"
+        app:layout_constraintEnd_toStartOf="@id/latitude_title"/>
+
+    <TextView
+        android:id="@+id/latitude_title"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="纬度"
+        android:textSize="15sp"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/tv_baseview"
+        app:layout_constraintStart_toEndOf="@id/longitude_content"
+        app:layout_constraintEnd_toStartOf="@id/latitude_content"/>
+
+    <TextView
+        android:id="@+id/latitude_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/latitude_title"
+        app:layout_constraintBottom_toBottomOf="@id/latitude_title"
+        app:layout_constraintStart_toEndOf="@id/latitude_title"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/pop_item_bg_pressed"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_baseview"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

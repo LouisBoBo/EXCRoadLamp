@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pop_item_bg_pressed"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout
+            android:id="@+id/scrollerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingTop="@dimen/dp_10"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottom_view">
+
+            <LinearLayout
+                android:id="@+id/detail_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@drawable/background_normal"
+
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    android:id="@+id/tv_device_name"
+                    layout="@layout/item_device_info" />
+
+                <include
+                    android:id="@+id/tv_device_num"
+                    layout="@layout/item_device_info" />
+
+                <include
+                    android:id="@+id/tv_device_count"
+                    layout="@layout/item_device_info" />
+
+                <include
+                    android:id="@+id/tv_site_name"
+                    layout="@layout/item_device_area" />
+
+                <include
+                    android:id="@+id/tv_device_product"
+                    layout="@layout/item_device_info" />
+
+                <include
+                    android:id="@+id/device_coordinate"
+                    layout="@layout/item_device_coordinate" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_10" />
+
+            <RelativeLayout
+                android:id="@+id/re_map"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_180"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                app:layout_isConsecutive="false"
+                app:layout_constraintTop_toBottomOf="@id/detail_info">
+
+                <LinearLayout
+                    android:id="@+id/ll_back_current_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:background="@drawable/dev_nap_right_btn_bg"
+                    android:padding="@dimen/dp_10">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_22"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_back_my_location" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_15" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lamp_light_info"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/pop_item_bg_pressed"
+                android:visibility="visible"
+                app:layout_isSticky="true"
+                app:layout_constraintTop_toBottomOf="@id/re_map"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/light_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="灯具信息"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/light_add"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@mipmap/lamp_light_add_icon"
+                    app:layout_constraintTop_toTopOf="@id/light_title"
+                    app:layout_constraintBottom_toBottomOf="@id/light_title"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/light_del"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@mipmap/lamp_light_reduce_icon"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@id/light_title"
+                    app:layout_constraintBottom_toBottomOf="@id/light_title"
+                    app:layout_constraintEnd_toStartOf="@id/light_add"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lightRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/light_add"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/scrollerLayout"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_35"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@drawable/background_btn_cancle"
+                android:clickable="true"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_35"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/dp_20"
+                android:background="@drawable/background_btn_blue"
+                android:clickable="true"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

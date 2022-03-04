@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/baseview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_250"
+        android:layout_marginRight="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:background="@drawable/background_normal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/close_dialog"
+            android:layout_width="@dimen/dp_15"
+            android:layout_height="@dimen/dp_15"
+            android:src="@mipmap/qcode_close"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/base_week1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_30"
+            app:layout_constraintTop_toBottomOf="@id/close_dialog"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <CheckedTextView
+                    android:id="@+id/tv_week1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_build_unselector"
+                    android:gravity="center"
+                    android:text="周一"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="match_parent" />
+
+                <CheckedTextView
+                    android:id="@+id/tv_week2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_build_unselector"
+                    android:gravity="center"
+                    android:text="周二"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="match_parent" />
+
+                <CheckedTextView
+                    android:id="@+id/tv_week3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_build_unselector"
+                    android:gravity="center"
+                    android:text="周三"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="match_parent" />
+
+                <CheckedTextView
+                    android:id="@+id/tv_week4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_build_unselector"
+                    android:gravity="center"
+                    android:text="周四"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/base_week2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@id/base_week1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <CheckedTextView
+                    android:id="@+id/tv_week5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_build_unselector"
+                    android:gravity="center"
+                    android:text="周五"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="match_parent" />
+
+                <CheckedTextView
+                    android:id="@+id/tv_week6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_build_unselector"
+                    android:gravity="center"
+                    android:text="周六"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="match_parent" />
+
+                <CheckedTextView
+                    android:id="@+id/tv_week7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_build_unselector"
+                    android:gravity="center"
+                    android:text="周日"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="match_parent" />
+
+                <CheckedTextView
+                    android:id="@+id/tv_week8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_build_unselector"
+                    android:gravity="center"
+                    android:text="周日"
+                    android:visibility="invisible"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/background_normal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@drawable/background_btn_cancle"
+                android:clickable="true"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/dp_20"
+                android:background="@drawable/background_btn_blue"
+                android:clickable="true"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

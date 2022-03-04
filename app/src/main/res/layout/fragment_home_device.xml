@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.xuexiang.xui.widget.tabbar.TabControlView
+        android:visibility="gone"
+        android:id="@+id/tabControlView"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        app:tcv_items="@array/three_state_option"
+        app:tcv_selectedColor="@color/common_blue1"
+        app:tcv_strokeWidth="0.7dp"
+        app:tcv_textSize="@dimen/sp_13"
+        android:layout_marginLeft="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_alignParentBottom="false"
+        app:tcv_item_padding_horizontal="@dimen/dp_8"
+        app:tcv_item_padding_vertical="@dimen/dp_5"
+        app:tcv_unselectedColor="@color/color_EEF6FF"
+        app:tcv_unselectedTextColor="@color/text_color_333333" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/testimg"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_53"
+        android:layout_marginLeft="@dimen/dp_90"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/icon_toleft" />
+
+</RelativeLayout>

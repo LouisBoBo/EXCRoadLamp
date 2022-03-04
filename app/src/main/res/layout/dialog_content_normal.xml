@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_scanmap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:background="@drawable/background_btn_blue"
+            android:clickable="true"
+            android:drawablePadding="16dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="查看地图"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/tv_scanmap_img"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:src="@mipmap/icon_location"
+            android:layout_marginLeft="@dimen/dp_90"
+            app:layout_constraintTop_toTopOf="@id/tv_scanmap"
+            app:layout_constraintBottom_toBottomOf="@id/tv_scanmap"
+            app:layout_constraintStart_toStartOf="@id/tv_scanmap"
+            app:layout_constraintEnd_toEndOf="@id/tv_scanmap"/>
+
+        <TextView
+            android:id="@+id/tv_deleate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/background_btn_red"
+            android:clickable="true"
+            android:drawablePadding="16dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="删除"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_scanmap"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

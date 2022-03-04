@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/base_energy"
+        android:layout_width="match_parent"
+        android:layout_height="305dp"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/background_normal"/>
+
+    <TextView
+        android:id="@+id/energy_day"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/base_energy"
+        app:layout_constraintEnd_toStartOf="@id/energy_month"/>
+
+    <ImageView
+        android:id="@+id/energy_day_icon"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:src="@mipmap/icon_day_alarm"
+        app:layout_constraintTop_toTopOf="@id/energy_day"
+        app:layout_constraintStart_toStartOf="@id/energy_day"
+        app:layout_constraintBottom_toBottomOf="@id/energy_day"/>
+
+    <TextView
+        android:id="@+id/energy_day_text1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:text="日告警"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/energy_day"
+        app:layout_constraintStart_toEndOf="@id/energy_day_icon"
+        app:layout_constraintEnd_toEndOf="@id/energy_day"
+        app:layout_constraintBottom_toTopOf="@id/energy_day_text2"/>
+
+    <TextView
+        android:id="@+id/energy_day_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:text="同比"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/energy_day_text1"
+        app:layout_constraintStart_toEndOf="@id/energy_day_icon"
+        app:layout_constraintBottom_toBottomOf="@id/energy_day"/>
+
+    <ImageView
+        android:id="@+id/energy_day_add"
+        android:layout_width="@dimen/dp_10"
+        android:layout_height="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_5"
+        app:layout_constraintTop_toTopOf="@id/energy_day_text2"
+        app:layout_constraintStart_toEndOf="@id/energy_day_text2"
+        app:layout_constraintBottom_toBottomOf="@id/energy_day_text2"/>
+
+    <TextView
+        android:id="@+id/energy_month"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/energy_day"
+        app:layout_constraintEnd_toEndOf="@id/base_energy"/>
+
+    <ImageView
+        android:id="@+id/energy_month_icon"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:src="@mipmap/icon_month_alarm"
+        app:layout_constraintTop_toTopOf="@id/energy_month"
+        app:layout_constraintStart_toStartOf="@id/energy_month"
+        app:layout_constraintBottom_toBottomOf="@id/energy_month"/>
+
+    <TextView
+        android:id="@+id/energy_month_text1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:text="月告警"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/energy_month"
+        app:layout_constraintStart_toEndOf="@id/energy_month_icon"
+        app:layout_constraintEnd_toEndOf="@id/energy_month"
+        app:layout_constraintBottom_toTopOf="@id/energy_month_text2"/>
+
+    <TextView
+        android:id="@+id/energy_month_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:text="同比"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/energy_month_text1"
+        app:layout_constraintStart_toEndOf="@id/energy_month_icon"
+        app:layout_constraintBottom_toBottomOf="@id/energy_month"/>
+
+    <ImageView
+        android:id="@+id/energy_month_add"
+        android:layout_width="@dimen/dp_10"
+        android:layout_height="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_5"
+        app:layout_constraintTop_toTopOf="@id/energy_month_text2"
+        app:layout_constraintStart_toEndOf="@id/energy_month_text2"
+        app:layout_constraintBottom_toBottomOf="@id/energy_month_text2"/>
+
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/energy_day"
+        app:layout_constraintStart_toStartOf="@id/base_energy"
+        app:layout_constraintEnd_toEndOf="@id/base_energy"
+        android:background="@color/pop_item_bg_pressed"/>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/mBarChar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="@id/base_energy"
+        app:layout_constraintStart_toEndOf="@id/base_energy"
+        app:layout_constraintTop_toBottomOf="@id/select_headview"
+        app:layout_constraintBottom_toBottomOf="@id/base_energy"
+        />
+
+    <View
+        android:id="@+id/select_headview"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_25"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/tv_line"
+        app:layout_constraintStart_toStartOf="@id/base_energy"
+        app:layout_constraintEnd_toEndOf="@id/base_energy"/>
+
+    <TextView
+        android:id="@+id/btn_day_alarm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="日告警"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/select_headview"
+        app:layout_constraintStart_toStartOf="@id/select_headview"
+        app:layout_constraintEnd_toStartOf="@id/btn_monty_alarm"
+        app:layout_constraintBottom_toBottomOf="@id/select_headview"
+        />
+
+    <TextView
+        android:id="@+id/btn_monty_alarm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="月告警"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/select_headview"
+        app:layout_constraintStart_toEndOf="@id/btn_day_alarm"
+        app:layout_constraintEnd_toEndOf="@id/select_headview"
+        app:layout_constraintBottom_toBottomOf="@id/select_headview"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_110"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/baseview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_116"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_tiptitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全局操作"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintTop_toTopOf="@id/baseview"
+        app:layout_constraintStart_toStartOf="@id/baseview"/>
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_18"
+        android:text="最低可调节至20%"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_11"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:background="@drawable/background_btn_yellow"
+        app:layout_constraintTop_toTopOf="@id/tv_tiptitle"
+        app:layout_constraintBottom_toBottomOf="@id/tv_tiptitle"
+        app:layout_constraintStart_toEndOf="@id/tv_tiptitle"/>
+
+    <ImageView
+        android:id="@+id/status_switch"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_dev_status_open"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="@id/baseview"
+        app:layout_constraintTop_toBottomOf="@id/tv_tiptitle"/>
+
+    <SeekBar
+        android:id="@+id/sk"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"
+        android:layout_height="@dimen/dp_30"
+        android:splitTrack="false"
+        android:layout_width="0dp"
+        android:progress="0"
+        android:max="100"
+        android:duplicateParentState="true"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:progressDrawable="@drawable/lamp_dev_open_seek_bar_drawable"
+        android:thumbTint="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="@id/status_switch"
+        app:layout_constraintBottom_toBottomOf="@id/status_switch"
+        app:layout_constraintStart_toEndOf="@id/status_switch"
+        app:layout_constraintEnd_toEndOf="@id/baseview"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="亮度："
+        android:textSize="@dimen/sp_14"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="@id/sk"
+        app:layout_constraintBottom_toBottomOf="@id/sk"
+        app:layout_constraintStart_toStartOf="@id/sk"/>
+
+    <TextView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:text="0%"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/sk"
+        app:layout_constraintBottom_toBottomOf="@id/sk"
+        app:layout_constraintStart_toEndOf="@id/tv_title"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
